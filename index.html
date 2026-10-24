@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jelp</title>
+  <meta name="description" content="jelp is a small site. Each page is its own file, gathered in one list.">
+  <meta name="theme-color" content="#1b2e27">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,460;1,9..144,560&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,550;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="sheet">
+    <header class="masthead">
+      <p class="issue"><span>sleeplessgliding</span><span>No. 01</span></p>
+      <div class="titleblock">
+        <h1 class="wordmark"><a href="index.html"><span class="j">j</span>elp</a></h1>
+        <p class="stamp" aria-hidden="true">Vol.<br>I</p>
+      </div>
+      <p class="tagline">A few pages. One list.</p>
+      <!-- Page links are filled from the pages array in site.js -->
+      <nav class="contents-bar" data-nav aria-label="Pages">
+        <noscript>
+          <a href="index.html">01 Front</a>
+          <a href="about.html">02 About</a>
+        </noscript>
+      </nav>
+    </header>
+    <main id="content">
+      <p class="lede">This is the front page. Everything else is a separate file, named in the contents below. Add a page and it joins this list, and the bar under the title.</p>
+      <h2 class="section-label">Contents</h2>
+      <noscript>
+        <ol class="page-list">
+          <li><a href="index.html"><span class="num">01</span><span class="title">Front</span><span class="blurb">The door. Every page on the site is listed here.</span></a></li>
+          <li><a href="about.html"><span class="num">02</span><span class="title">About</span><span class="blurb">What jelp is, and how to add the next page.</span></a></li>
+        </ol>
+      </noscript>
+      <ol class="page-list" data-contents hidden></ol>
+    </main>
+    <footer class="colophon">
+      <p>Set in Fraunces and Newsreader.</p>
+      <p data-signature>jelp</p>
+    </footer>
+  </div>
+  <script src="site.js"></script>
+</body>
+</html>

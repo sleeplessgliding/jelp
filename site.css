@@ -1,0 +1,402 @@
+:root {
+  --desk: #1b2e27;
+  --paper: #f3e6c8;
+  --paper-shade: #e7d5ae;
+  --ink: #1a1410;
+  --ink-soft: #5c5148;
+  --stamp: #c23b32;
+  --mark: #efc84d;
+  --rule: rgba(26, 20, 16, 0.28);
+  --serif: "Fraunces", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --text: "Newsreader", "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  --mono: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 50% 30%, #2a463b 0%, var(--desk) 62%);
+  font-family: var(--text);
+  font-size: 1.125rem;
+  line-height: 1.55;
+  padding: 1.75rem 1.15rem 3rem;
+}
+
+::selection {
+  background: var(--mark);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--stamp);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 2;
+  background: var(--mark);
+  color: var(--ink);
+  padding: 0.35rem 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.skip:focus { top: 0.6rem; }
+
+.sheet {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 52rem;
+  min-height: calc(100vh - 5rem);
+  margin: 0 auto;
+  padding: clamp(1.35rem, 4vw, 2.75rem);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 236, 0.55), transparent 7rem),
+    var(--paper);
+  box-shadow: 8px 8px 0 #100e0c;
+  outline: 1px solid var(--ink);
+  outline-offset: -11px;
+}
+
+.issue {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.titleblock {
+  position: relative;
+  min-height: 4.5rem;
+}
+
+.wordmark {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 460;
+  font-size: clamp(4.6rem, 17vw, 8.4rem);
+  font-variation-settings: "SOFT" 50, "opsz" 144, "WONK" 1;
+  line-height: 0.8;
+  letter-spacing: -0.045em;
+  padding-bottom: 0.22em;
+}
+
+.wordmark a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wordmark a:hover {
+  background-image: linear-gradient(var(--mark), var(--mark));
+  background-repeat: no-repeat;
+  background-position: 0 82%;
+  background-size: 100% 0.22em;
+}
+
+.j { color: var(--stamp); }
+
+.stamp {
+  position: absolute;
+  right: 1%;
+  top: 0.15rem;
+  display: grid;
+  place-items: center;
+  width: 5.4rem;
+  height: 5.4rem;
+  margin: 0;
+  border: 2px solid var(--stamp);
+  border-radius: 50%;
+  color: var(--stamp);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(11deg);
+  pointer-events: none;
+}
+
+.tagline {
+  margin: 0.15rem 0 0;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-style: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.masthead {
+  margin-bottom: 1.6rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--ink);
+  box-shadow: 0 4px 0 var(--paper), 0 5px 0 var(--ink);
+}
+
+.contents-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.35rem;
+  margin-top: 0.95rem;
+}
+
+.contents-bar a {
+  color: var(--ink);
+  font-size: 1.08rem;
+  text-decoration: none;
+}
+
+.contents-bar .num {
+  margin-right: 0.35rem;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+}
+
+.contents-bar a[aria-current="page"] {
+  background-image: linear-gradient(var(--mark), var(--mark));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.42em;
+}
+
+main { margin-bottom: 2.25rem; }
+
+.lede {
+  max-width: 38rem;
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+main h1 {
+  margin: 0.2rem 0 0.9rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 520;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-variation-settings: "SOFT" 30, "opsz" 72, "WONK" 1;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+main h2 {
+  margin: 2.1rem 0 0.35rem;
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 520;
+  font-size: 1.85rem;
+  letter-spacing: -0.02em;
+}
+
+main p { max-width: 40rem; }
+
+.section-label {
+  margin: 2rem 0 0.15rem;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.page-list {
+  list-style: none;
+  max-width: 40rem;
+  margin: 0;
+  padding: 0;
+}
+
+.page-list a {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  grid-template-areas:
+    "num title"
+    "num blurb";
+  gap: 0.1rem 0.85rem;
+  padding: 0.85rem 0.15rem;
+  border-bottom: 1px solid var(--rule);
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-list .num {
+  grid-area: num;
+  color: var(--stamp);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.85rem;
+  font-variation-settings: "opsz" 36, "SOFT" 40;
+  line-height: 1;
+  padding-top: 0.15rem;
+}
+
+.page-list .title {
+  grid-area: title;
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 520;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.page-list .blurb {
+  grid-area: blurb;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+
+.page-list a:hover .title {
+  background-image: linear-gradient(var(--mark), var(--mark));
+  background-repeat: no-repeat;
+  background-position: 0 92%;
+  background-size: 100% 0.34em;
+}
+
+.here {
+  display: inline-block;
+  margin-left: 0.55rem;
+  color: var(--stamp);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  vertical-align: 0.25rem;
+}
+
+.steps {
+  max-width: 40rem;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  position: relative;
+  padding: 0.85rem 0 0.85rem 3.1rem;
+  border-top: 1px solid var(--rule);
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.85rem;
+  color: var(--stamp);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.45rem;
+  font-variation-settings: "opsz" 36;
+  line-height: 1.1;
+}
+
+.steps strong {
+  font-weight: 550;
+}
+
+main a {
+  color: inherit;
+  text-decoration-color: var(--stamp);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.16em;
+}
+
+main a:hover {
+  background-image: linear-gradient(var(--mark), var(--mark));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.38em;
+}
+
+code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: var(--paper-shade);
+  padding: 0.05em 0.28em;
+}
+
+.return {
+  margin-top: 1.5rem;
+}
+
+.colophon {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--ink);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.colophon p { margin: 0; }
+
+@media (max-width: 640px) {
+  body { padding: 0.85rem 0.7rem 2rem; }
+
+  .sheet {
+    outline-offset: -8px;
+    box-shadow: 5px 5px 0 #100e0c;
+  }
+
+  .titleblock {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+  }
+
+  .stamp {
+    position: static;
+    width: 4.3rem;
+    height: 4.3rem;
+    font-size: 0.62rem;
+    transform: rotate(8deg);
+  }
+
+  .wordmark { font-size: clamp(4.2rem, 24vw, 6rem); }
+
+  .colophon { flex-direction: column; }
+
+  .page-list a { grid-template-columns: 2.6rem 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
