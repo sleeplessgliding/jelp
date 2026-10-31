@@ -11,6 +11,21 @@ const pages = [
     title: "About",
     blurb: "What jelp is, and how to add the next page.",
   },
+  {
+    href: "PDX/restaurants.html",
+    title: "Restaurants",
+    blurb: "Places to eat, filtered by food, meal, and neighborhood or city.",
+  },
+  {
+    href: "PDX/nurseries.html",
+    title: "Nurseries",
+    blurb: "Plant shops, with the neighborhood and the address.",
+  },
+  {
+    href: "misc.html",
+    title: "Misc",
+    blurb: "Everything that isn’t a restaurant or a nursery.",
+  },
 ];
 
 function numberFor(index) {
@@ -18,10 +33,16 @@ function numberFor(index) {
 }
 
 function currentHref() {
-  const path = window.location.pathname;
-  if (path.endsWith("/") || path.endsWith("/index.html")) return "index.html";
-  const file = path.split("/").pop();
-  return file || "index.html";
+  const path = decodeURIComponent(window.location.pathname);
+  const found = pages.find((page) => path.endsWith("/" + page.href));
+  if (found) return found.href;
+  return "index.html";
+}
+
+function rootPrefix() {
+  const here = currentHref();
+  const depth = here.split("/").length - 1;
+  return "../".repeat(depth);
 }
 
 function escapeHtml(value) {
@@ -35,13 +56,14 @@ function escapeHtml(value) {
 function renderPages() {
   const here = currentHref();
   const hereIndex = pages.findIndex((page) => page.href === here);
+  const prefix = rootPrefix();
 
   const nav = document.querySelector("[data-nav]");
   if (nav) {
     nav.innerHTML = pages
       .map((page, index) => {
         const current = page.href === here ? ' aria-current="page"' : "";
-        return `<a href="${escapeHtml(page.href)}"${current}><span class="num">${numberFor(index)}</span> ${escapeHtml(page.title)}</a>`;
+        return `<a href="${escapeHtml(prefix + page.href)}"${current}><span class="num">${numberFor(index)}</span> ${escapeHtml(page.title)}</a>`;
       })
       .join("");
   }
@@ -53,7 +75,7 @@ function renderPages() {
       .map((page, index) => {
         const hereMark =
           page.href === here ? '<span class="here">you are here</span>' : "";
-        return `<li><a href="${escapeHtml(page.href)}"><span class="num">${numberFor(index)}</span><span class="title">${escapeHtml(page.title)}${hereMark}</span><span class="blurb">${escapeHtml(page.blurb)}</span></a></li>`;
+        return `<li><a href="${escapeHtml(prefix + page.href)}"><span class="num">${numberFor(index)}</span><span class="title">${escapeHtml(page.title)}${hereMark}</span><span class="blurb">${escapeHtml(page.blurb)}</span></a></li>`;
       })
       .join("");
   }

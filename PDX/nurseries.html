@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nurseries — jelp</title>
+  <meta name="description" content="Portland nurseries, with the neighborhood and the address.">
+  <meta name="theme-color" content="#645b9b">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,460;1,9..144,560&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,550;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../site.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="sheet wide">
+    <header class="masthead">
+      <p class="issue"><span>sleeplessgliding</span><span>No. 01</span></p>
+      <div class="titleblock">
+        <p class="wordmark"><a href="../index.html"><span class="j">j</span>elp</a></p>
+        <p class="stamp" aria-hidden="true">Vol.<br>I</p>
+      </div>
+      <p class="tagline">A few pages. One list.</p>
+      <nav class="contents-bar" data-nav aria-label="Pages">
+        <noscript>
+          <a href="../index.html">01 Front</a>
+          <a href="../about.html">02 About</a>
+          <a href="restaurants.html">03 Restaurants</a>
+          <a href="nurseries.html">04 Nurseries</a>
+          <a href="../misc.html">05 Misc</a>
+        </noscript>
+      </nav>
+    </header>
+    <main id="content">
+      <h1>Nurseries</h1>
+      <p class="lede">Plant shops. A picture, the neighborhood, and a map pin.</p>
+      <div class="filters">
+        <label class="search">
+          <span>Search</span>
+          <input type="search" data-search placeholder="Name or neighborhood" autocomplete="off">
+        </label>
+        <div class="filter-menu" data-hood-filters></div>
+      </div>
+      <p class="result-line"><span data-count>Shops</span><button type="button" data-clear hidden>Clear</button></p>
+      <div class="place-grid" data-nursery-list></div>
+      <p class="empty" data-empty hidden>Nothing on the list matches.</p>
+      <noscript>
+        <ul class="directory">
+          <li>Hammer + Vine, Nob Hill, 2190 W Burnside St, Suite B.</li>
+          <li>Pistils, Mississippi, 3811 N Mississippi Ave. Slabtown, 2139 NW Raleigh St.</li>
+          <li>Arium Botanicals, Eliot, 2046 NE Martin Luther King Jr Blvd.</li>
+        </ul>
+      </noscript>
+    </main>
+    <footer class="colophon">
+      <p>Set in Fraunces and Newsreader.</p>
+      <p data-signature>jelp</p>
+    </footer>
+  </div>
+  <script src="../site.js"></script>
+  <script src="places.js"></script>
+</body>
+</html>
