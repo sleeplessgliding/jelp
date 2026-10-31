@@ -806,3 +806,9 @@ main a.photo:hover,
   background-position: 0 88%;
   background-size: 100% 0.34em;
 }
+
+.album-grid .place-card .slide,
+.album-grid .place-card .photo img {
+  height: auto;
+  aspect-ratio: 1;
+}

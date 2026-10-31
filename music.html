@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music — jelp</title>
+  <meta name="description" content="Albums to listen to, with the artist and the genre.">
+  <meta name="theme-color" content="#645b9b">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,460;1,9..144,560&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,550;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="sheet wide">
+    <header class="masthead">
+      <p class="issue"><span>sleeplessgliding</span><span>No. 01</span></p>
+      <div class="titleblock">
+        <p class="wordmark"><a href="index.html"><span class="j">j</span>elp</a></p>
+        <p class="stamp" aria-hidden="true">Vol.<br>I</p>
+      </div>
+      <p class="tagline">A few pages. One list.</p>
+      <nav class="contents-bar" data-nav aria-label="Pages">
+        <noscript>
+          <a href="index.html">01 Front</a>
+          <a href="about.html">02 About</a>
+          <a href="PDX/restaurants.html">03 Restaurants</a>
+          <a href="PDX/nurseries.html">04 Nurseries</a>
+          <a href="misc.html">05 Misc</a>
+          <a href="music.html">06 Music</a>
+        </noscript>
+      </nav>
+    </header>
+    <main id="content">
+      <h1>Music</h1>
+      <p class="lede">Albums to listen to. The artist, the record, and roughly what it sounds like.</p>
+      <div class="filters">
+        <label class="search">
+          <span>Search</span>
+          <input type="search" data-search placeholder="Album, artist, or genre" autocomplete="off">
+        </label>
+        <div class="filter-menu" data-genre-filters></div>
+        <div class="filter-menu" data-artist-filters></div>
+      </div>
+      <p class="result-line"><span data-count>Albums</span><button type="button" data-clear hidden>Clear</button></p>
+      <div class="place-grid album-grid" data-music-list></div>
+      <p class="empty" data-empty hidden>Nothing on the list matches that combination.</p>
+      <noscript>
+        <ul class="directory">
+          <li>
+            <p class="hood">Boards of Canada</p>
+            <h2>Inferno</h2>
+            <p class="tags"><span class="tag tag-food">Downtempo</span><span class="tag tag-food">IDM</span></p>
+          </li>
+          <li>
+            <p class="hood">The Avalanches</p>
+            <h2>No Bad Memories</h2>
+          </li>
+          <li>
+            <p class="hood">Bonobo</p>
+            <h2>Distance in Static</h2>
+            <p class="tags"><span class="tag tag-food">House</span><span class="tag tag-food">Downtempo</span></p>
+          </li>
+          <li>
+            <p class="hood">Max Cooper</p>
+            <h2>Feeling is Structure</h2>
+            <p class="tags"><span class="tag tag-food">IDM</span><span class="tag tag-food">UK Bass</span></p>
+          </li>
+          <li>
+            <p class="hood">Nathan Fake</p>
+            <h2>Evaporator</h2>
+            <p class="tags"><span class="tag tag-food">IDM</span><span class="tag tag-food">Ambient Techno</span></p>
+          </li>
+          <li>
+            <p class="hood">Nero&rsquo;s Day at Disneyland</p>
+            <h2>Grand Reopening</h2>
+            <p class="tags"><span class="tag tag-food">Breakcore</span><span class="tag tag-food">IDM</span></p>
+          </li>
+          <li>
+            <p class="hood">Ibrahim Alfa JNR</p>
+            <h2>Infinite Black Inside</h2>
+            <p class="tags"><span class="tag tag-food">Minimal Techno</span><span class="tag tag-food">IDM</span></p>
+          </li>
+          <li>
+            <p class="hood">DJRUM</p>
+            <h2>I Wander</h2>
+            <p class="tags"><span class="tag tag-food">Drill and Bass</span><span class="tag tag-food">UK Bass</span></p>
+          </li>
+        </ul>
+      </noscript>
+      <p class="return"><a href="index.html">Back to the front page</a></p>
+    </main>
+    <footer class="colophon">
+      <p>Set in Fraunces and Newsreader.</p>
+      <p data-signature>jelp</p>
+    </footer>
+  </div>
+  <script src="site.js"></script>
+  <script src="PDX/places.js"></script>
+</body>
+</html>

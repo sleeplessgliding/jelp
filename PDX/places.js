@@ -1309,6 +1309,17 @@ const misc = [
   },
 ];
 
+const albums = [
+  { name: "Inferno", neighborhood: "Boards of Canada", cuisine: ["Downtempo", "IDM"], image: "music/inferno.jpg", website: "https://open.spotify.com/album/0mu3EvWYfNwBfISSg0q03p", alt: "Inferno cover" },
+  { name: "No Bad Memories", neighborhood: "The Avalanches", cuisine: [], image: "music/no-bad-memories.jpg", website: "https://open.spotify.com/album/3De7Ues320SIjGCaz5b6fX", alt: "No Bad Memories cover" },
+  { name: "Distance in Static", neighborhood: "Bonobo", cuisine: ["House", "Downtempo"], image: "music/distance-in-static.jpg", website: "https://open.spotify.com/album/2FMGW8WrG0BE0ZimHbHw2M", alt: "Distance in Static cover" },
+  { name: "Feeling is Structure", neighborhood: "Max Cooper", cuisine: ["IDM", "UK Bass"], image: "music/feeling-is-structure.jpg", website: "https://open.spotify.com/album/2pvLN2jTZhYg9aWQyESDps", alt: "Feeling is Structure cover" },
+  { name: "Evaporator", neighborhood: "Nathan Fake", cuisine: ["IDM", "Ambient Techno"], image: "music/evaporator.jpg", website: "https://open.spotify.com/album/0uB9jp5XGssp3jbEpWdSId", alt: "Evaporator cover" },
+  { name: "Grand Reopening", neighborhood: "Nero’s Day at Disneyland", cuisine: ["Breakcore", "IDM"], image: "music/grand-reopening.jpg", website: "https://open.spotify.com/album/5uQuOINAoZjdu3FeNd6JI0", alt: "Grand Reopening cover" },
+  { name: "Infinite Black Inside", neighborhood: "Ibrahim Alfa JNR", cuisine: ["Minimal Techno", "IDM"], image: "music/infinite-black-inside.jpg", website: "https://open.spotify.com/album/10MEqPNqi2tp7sd14cQ4sI", alt: "Infinite Black Inside cover" },
+  { name: "I Wander", neighborhood: "DJRUM", cuisine: ["Drill and Bass", "UK Bass"], image: "music/i-wander.jpg", website: "https://open.spotify.com/album/02yCblfjlo1MFWBMLWXwbr", alt: "I Wander cover" },
+];
+
 const foodOrder = [
   "Jake Food",
   "Chicken Soup",
@@ -1816,7 +1827,95 @@ function renderMiscPage() {
   apply();
 }
 
+function renderMusicPage() {
+  const genreBox = document.querySelector("[data-genre-filters]");
+  const artistBox = document.querySelector("[data-artist-filters]");
+  const list = document.querySelector("[data-music-list]");
+  const count = document.querySelector("[data-count]");
+  const empty = document.querySelector("[data-empty]");
+  const clearBtn = document.querySelector("[data-clear]");
+  if (!genreBox || !artistBox || !list) return;
+
+  const selectedGenres = new Set();
+  const selectedArtists = new Set();
+  list.innerHTML = albums.map((album) => placeCard(album)).join("");
+  const cards = [...list.querySelectorAll(".place-card")];
+  const genreNames = [...new Set(albums.flatMap((album) => album.cuisine || []))].sort((a, b) =>
+    a.localeCompare(b, "en", { sensitivity: "base" })
+  );
+
+  function apply() {
+    let shown = 0;
+    albums.forEach((album, index) => {
+      const genreOk = selectedGenres.size === 0 || (album.cuisine || []).some((item) => selectedGenres.has(item));
+      const artistOk = selectedArtists.size === 0 || selectedArtists.has(album.neighborhood);
+      const visible = genreOk && artistOk && matchesQuery(album, search.query());
+      cards[index].hidden = !visible;
+      if (visible) shown += 1;
+    });
+    const total = albums.length;
+    count.textContent = shown === total ? `${total} albums` : `${shown} of ${total}`;
+    empty.hidden = shown !== 0;
+    clearBtn.hidden = selectedGenres.size === 0 && selectedArtists.size === 0 && !search.query().trim();
+  }
+
+  const menus = [
+    mountSelect(genreBox, {
+      name: "Genre",
+      options: genreNames.map((name) => ({ value: name, label: name })),
+      selected: selectedGenres,
+      onChange: apply,
+    }),
+    mountSelect(artistBox, {
+      name: "Artist",
+      options: hoodOptions(albums).map((name) => ({ value: name, label: name })),
+      selected: selectedArtists,
+      onChange: apply,
+    }),
+  ];
+
+  const search = mountSearch(apply);
+
+  clearBtn.addEventListener("click", () => {
+    menus.forEach((menu) => menu.reset());
+    search.reset();
+    closeFilterMenus();
+    apply();
+  });
+
+  bindFilterDismiss();
+  bindSpotifyAppLinks(list);
+  apply();
+}
+
+// On a computer, try the Spotify app first and fall back to the web player.
+// Phones keep the plain link, which already hands off to the app.
+function bindSpotifyAppLinks(root) {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  root.addEventListener("click", (event) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest('a[href^="https://open.spotify.com/album/"]');
+    if (!link) return;
+    event.preventDefault();
+    const webUrl = link.href;
+    const appUrl = `spotify:album:${new URL(webUrl).pathname.split("/").pop()}`;
+    let leftPage = false;
+    const markLeft = () => {
+      leftPage = true;
+    };
+    window.addEventListener("blur", markLeft, { once: true });
+    document.addEventListener("visibilitychange", markLeft, { once: true });
+    window.location.href = appUrl;
+    setTimeout(() => {
+      window.removeEventListener("blur", markLeft);
+      document.removeEventListener("visibilitychange", markLeft);
+      if (!leftPage) window.location.href = webUrl;
+    }, 1500);
+  });
+}
+
 bindCarousels();
 renderRestaurantPage();
 renderNurseryPage();
 renderMiscPage();
+renderMusicPage();

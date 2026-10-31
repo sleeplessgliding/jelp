@@ -26,6 +26,11 @@ const pages = [
     title: "Misc",
     blurb: "Everything that isn’t a restaurant or a nursery.",
   },
+  {
+    href: "music.html",
+    title: "Music",
+    blurb: "Albums to listen to, with the artist and the genre.",
+  },
 ];
 
 function numberFor(index) {
