@@ -1318,6 +1318,16 @@ const albums = [
   { name: "Grand Reopening", neighborhood: "Nero’s Day at Disneyland", cuisine: ["Breakcore", "IDM"], image: "music/grand-reopening.jpg", website: "https://open.spotify.com/album/5uQuOINAoZjdu3FeNd6JI0", alt: "Grand Reopening cover" },
   { name: "Infinite Black Inside", neighborhood: "Ibrahim Alfa JNR", cuisine: ["Minimal Techno", "IDM"], image: "music/infinite-black-inside.jpg", website: "https://open.spotify.com/album/10MEqPNqi2tp7sd14cQ4sI", alt: "Infinite Black Inside cover" },
   { name: "I Wander", neighborhood: "DJRUM", cuisine: ["Drill and Bass", "UK Bass"], image: "music/i-wander.jpg", website: "https://open.spotify.com/album/02yCblfjlo1MFWBMLWXwbr", alt: "I Wander cover" },
+  { name: "Selected Ambient Works 85-92", neighborhood: "Aphex Twin", cuisine: ["Ambient Techno"], image: "music/selected-ambient-works-85-92.jpg", website: "https://open.spotify.com/album/7aNclGRxTysfh6z0d8671k", alt: "Selected Ambient Works 85-92 cover" },
+  { name: "76:14", neighborhood: "Global Communication", cuisine: ["Ambient Techno"], image: "music/76-14.jpg", website: "https://open.spotify.com/album/0CCYU4pfINH3Lt5krDd9JO", alt: "76:14 cover" },
+  { name: "Submers", neighborhood: "Loscil", cuisine: ["Ambient Techno"], image: "music/submers.jpg", website: "https://open.spotify.com/album/5Z0IHaFT9sULX0S7b1jmcd", alt: "Submers cover" },
+  { name: "More Songs About Food and Revolutionary Art", neighborhood: "Carl Craig", cuisine: ["Ambient Techno"], image: "music/more-songs-about-food-and-revolutionary-art.jpg", website: "https://open.spotify.com/album/1bGa8EVZerZTbJUo5dMbuU", alt: "More Songs About Food and Revolutionary Art cover" },
+  { name: "[Las Vegas]", neighborhood: "Burger/Ink", cuisine: ["Ambient Techno"], image: "music/las-vegas.jpg", website: "https://open.spotify.com/album/2L350q8rF8zwpCnaz42dI5", alt: "[Las Vegas] cover" },
+  { name: "Please Touch", neighborhood: "Rrose", cuisine: ["Ambient Techno"], image: "music/please-touch.jpg", website: "https://open.spotify.com/album/0VW6p4XHXCmF6A4IGmgrqU", alt: "Please Touch cover" },
+  { name: "Ultra Truth", neighborhood: "Daniel Avery", cuisine: ["Ambient Techno"], image: "music/ultra-truth.jpg", website: "https://open.spotify.com/album/4qw8zs6nZyjpgPPBxZWpTI", alt: "Ultra Truth cover" },
+  { name: "Compro", neighborhood: "Skee Mask", cuisine: ["Ambient Techno"], image: "music/compro.jpg", website: "https://iliantape.bandcamp.com/album/itlp04-compro", alt: "Compro cover" },
+  { name: "Koch", neighborhood: "Lee Gamble", cuisine: ["Ambient Techno"], image: "music/koch.jpg", website: "https://open.spotify.com/album/0hNVX2D7I7tOMJ523ugFRA", alt: "Koch cover" },
+  { name: "Remembranza", neighborhood: "Murcof", cuisine: ["Ambient Techno"], image: "music/remembranza.jpg", website: "https://open.spotify.com/album/4wFHTdeCa6rLGmm0ExoxlB", alt: "Remembranza cover" },
 ];
 
 const foodOrder = [
