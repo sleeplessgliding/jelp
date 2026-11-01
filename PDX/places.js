@@ -204,6 +204,8 @@ const restaurants = [
     meals: [],
     closed: "Closed January 2026",
     note: "Last day was January 18, 2026. It was a bar with a New American kitchen on Mississippi.",
+    image: "photos/interurban.jpg",
+    alt: "Backbar at Interurban, shelves of bottles lit warm behind the bar.",
     spots: [{ address: "4057 N Mississippi Ave", city: "Portland, OR 97217" }],
   },
   {
@@ -227,6 +229,8 @@ const restaurants = [
     meals: [],
     closed: "Closed May 2026",
     note: "Raymond Chau closed Lúa in May 2026. The room on Williams is no longer the restaurant.",
+    image: "photos/lua.jpg",
+    alt: "Lúa at night, a neon sign over tall windows onto the dining room.",
     spots: [{ address: "3971 N Williams Ave, Suite 103", city: "Portland, OR 97227" }],
   },
   {
@@ -283,6 +287,8 @@ const restaurants = [
     meals: ["lunch", "dinner"],
     note: "Japanese home cooking, with vegan plates. Wednesday through Monday, 11:30 to 9. Closed Tuesday.",
     website: "https://www.obonpdx.com/",
+    image: "photos/obon.jpg",
+    alt: "Obon Shokudo storefront on Grand, with a blue noren in the doorway.",
     spots: [{ address: "720 SE Grand Ave", city: "Portland, OR 97214" }],
   },
   {
@@ -292,6 +298,8 @@ const restaurants = [
     meals: [],
     closed: "Closed May 2024",
     note: "Peter Cho’s Korean tapas bar closed May 26, 2024. Han Oak is the room that is still open.",
+    image: "photos/toki.jpg",
+    alt: "Glass doors under the Toki sign on SW 12th.",
     spots: [{ address: "580 SW 12th Ave", city: "Portland, OR 97205" }],
   },
   {
@@ -437,6 +445,8 @@ const restaurants = [
     meals: ["brunch", "lunch", "dinner", "drinks"],
     note: "Bar and cafe on Belmont. Wednesday, Thursday, and Sunday 10 to 10. Friday and Saturday until midnight. Closed Monday and Tuesday.",
     website: "https://www.instagram.com/foxtrotpdx/",
+    image: "photos/foxtrot.jpg",
+    alt: "Foxtrot’s gravel patio under string lights, with iron tables and the bar behind.",
     spots: [{ address: "3244 SE Belmont St", city: "Portland, OR 97214" }],
   },
   {
@@ -491,6 +501,8 @@ const restaurants = [
     meals: ["breakfast", "lunch", "dinner"],
     note: "Ethiopian coffee and food at 5730 NE Sandy. Monday through Friday 7 to 6, Saturday and Sunday 8 to 7.",
     website: "https://www.milkicafe.com/",
+    image: "photos/milki.jpg",
+    alt: "Dining room at Milki, green walls and a long window counter.",
     spots: [{ address: "5730 NE Sandy Blvd", city: "Portland, OR 97213" }],
   },
   {
@@ -697,6 +709,8 @@ const restaurants = [
     cuisine: [],
     meals: [],
     note: "Saved with no address.",
+    image: "photos/heist.jpg",
+    alt: "Big room at The Heist, a green leather couch and tables under hanging lamps.",
     spots: [],
   },
   {
@@ -733,6 +747,8 @@ const restaurants = [
     meals: ["lunch", "dinner"],
     note: "Yucatecan cooking. Pozole rojo and verde. Closed Monday. Sunday until 5, other days 11 to 8.",
     website: "https://www.instagram.com/kiikibaapdx/",
+    image: "photos/kiikibaa.jpg",
+    alt: "Order counter at Ki’ikibáa, red and yellow walls behind it.",
     spots: [{ address: "3244 NE 82nd Ave", city: "Portland, OR 97220" }],
   },
   {
@@ -781,6 +797,8 @@ const restaurants = [
     cuisine: ["Mexican", "Food Cart"],
     meals: [],
     note: "Skip it. Beans aren’t great, the burrito is mid, and the meat is gristly.",
+    image: "photos/mexico-linda.jpg",
+    alt: "Birria tacos with a cup of consommé and rice.",
     spots: [],
   },
   {
@@ -802,6 +820,8 @@ const restaurants = [
     cuisine: ["Sushi"],
     meals: ["dinner"],
     website: "https://www.nimblefishpdx.com/",
+    image: "photos/nimblefish.jpg",
+    alt: "Chefs working behind the sushi counter at Nimblefish.",
     spots: [{ address: "1524 SE 20th Ave", city: "Portland, OR 97214" }],
   },
   {
@@ -831,6 +851,8 @@ const restaurants = [
     cuisine: [],
     meals: [],
     note: "Saved with no address.",
+    image: "photos/pan-roast.jpg",
+    alt: "Pan Roast dining room, wooden tables under a painted mural.",
     spots: [],
   },
   {
@@ -850,6 +872,8 @@ const restaurants = [
     cuisine: ["Mexican"],
     meals: [],
     note: "Saved as Portland, with no street.",
+    image: "photos/saint-burrito.jpg",
+    alt: "The Saint Burrito cart lit up at night, plants around the window.",
     spots: [],
   },
   {
@@ -874,6 +898,8 @@ const restaurants = [
     cuisine: [],
     meals: [],
     note: "Decent burgers, regular size. Crinkle fries were okay, undercooked, and plain.",
+    image: "photos/smak-dabs.jpg",
+    alt: "The Smak Dabs cart, a small white trailer with a menu in the window.",
     spots: [],
   },
   {
@@ -882,6 +908,8 @@ const restaurants = [
     cuisine: ["Barbecue"],
     meals: ["dinner"],
     note: "Super mid.",
+    image: "photos/southbound-smoke.jpg",
+    alt: "Barbecue spread on butcher paper, with mac and cheese, greens, slaw, and cornbread.",
     spots: [{ address: "1135 SE Grand Ave", city: "Portland, OR 97214" }],
   },
   {
@@ -891,6 +919,8 @@ const restaurants = [
     meals: ["lunch"],
     note: "Cuban sandwiches. Also saved as the Cuban sandwich cart.",
     website: "https://www.yelp.com/biz/stellas-sandwiches-and-bowls-portland",
+    image: "photos/stellas.jpg",
+    alt: "Stella’s yellow cart, its menu photos along the front.",
     spots: [{ address: "431 SW Harvey Milk St", city: "Portland, OR 97204" }],
   },
   {
@@ -900,6 +930,8 @@ const restaurants = [
     meals: ["lunch"],
     note: "Sushi burritos at the downtown cart, weekdays about 11 to 6. Other carts were mentioned and are not listed here.",
     website: "https://sumosushipdx.square.site",
+    image: "photos/sumo-sushi.jpg",
+    alt: "The black Sumo Sushi trailer, parked under cover downtown.",
     spots: [{ address: "1881 SW 5th Ave", city: "Portland, OR 97201" }],
   },
   {
@@ -908,6 +940,8 @@ const restaurants = [
     cuisine: ["Mexican"],
     meals: [],
     note: "Skip. Tacos are fine and nothing special. Enchiladas aren’t.",
+    image: "photos/super-tacos-ocha.jpg",
+    alt: "A red taco truck with photos of the menu on its side.",
     spots: [],
   },
   {
@@ -927,6 +961,8 @@ const restaurants = [
     cuisine: ["Japanese", "Sandwiches"],
     meals: ["lunch", "dinner"],
     website: "https://www.yelp.com/biz/tokyo-sando-portland-3",
+    image: "photos/tokyo-sando.jpg",
+    alt: "The Tokyo Sando cart, red awning and a white sign out front.",
     spots: [{ address: "726 S Gaines St", city: "Portland, OR 97239" }],
   },
   {
@@ -936,6 +972,8 @@ const restaurants = [
     meals: ["dinner", "drinks"],
     note: "Cocktail bar. Food is from Dear Lola. Monday through Saturday, 5 to 1.",
     website: "https://toosoonpdx.com/",
+    image: "photos/too-soon.jpg",
+    alt: "Long bar at Too Soon, pink light over the bottles and red stools.",
     spots: [{ address: "18 NE 28th Ave", city: "Portland, OR 97232" }],
   },
   {
@@ -945,6 +983,8 @@ const restaurants = [
     meals: ["lunch", "dinner"],
     note: "A pod by Portland State. Pizza, gyros, Indian, pho, Thai, and tacos among the carts.",
     website: "https://universitystationfoodcarts.com/",
+    image: "photos/university-station.jpg",
+    alt: "Covered seating at University Station, picnic tables under string lights.",
     spots: [{ address: "616 SW College St", city: "Portland, OR 97201" }],
   },
   {
@@ -994,6 +1034,8 @@ const restaurants = [
     meals: ["dinner"],
     note: "Pasta parlor, pronounced GOOM-bah. It started as a cart in 2016 and now has a room on Alberta. Dinner from about 4:30.",
     website: "https://gumba-pdx.com/",
+    image: "photos/gumba.jpg",
+    alt: "Inside Gumba, a white counter, green walls, and tables by the windows.",
     spots: [{ address: "2203 NE Alberta St", city: "Portland, OR 97211" }],
   },
   {
@@ -1003,6 +1045,8 @@ const restaurants = [
     meals: ["brunch", "dinner", "drinks"],
     note: "Indigenous cooking from chef Alexa Numkena-Anderson. Fry bread, the Powwow Burger, bison. Brunch into the afternoon most days, dinner from 4 to 9. Tuesday and Wednesday are dinner only.",
     website: "https://javelinapdx.com/",
+    image: "photos/javelina.jpg",
+    alt: "Three people raising glasses at a table at Javelina.",
     spots: [{ address: "4636 NE 42nd Ave", city: "Portland, OR 97218" }],
   },
   {
@@ -1012,6 +1056,8 @@ const restaurants = [
     meals: ["dinner", "drinks"],
     note: "Italian small plates and pasta, pronounced LOO-che. Every day 4 to 10. No reservations. The bar is Bar Martina.",
     website: "https://www.luceportland.com/",
+    image: "photos/luce.jpg",
+    alt: "Shelves of wine and pantry goods at Luce, a cook behind the counter.",
     spots: [{ address: "2140 E Burnside St", city: "Portland, OR 97214" }],
   },
   {
@@ -1021,6 +1067,8 @@ const restaurants = [
     meals: ["breakfast", "lunch"],
     note: "Norwegian and French pastry luncheonette. Wednesday through Saturday, 10 to 4. Fika and quiche until 11, then the lunch menu.",
     website: "https://www.mauricepdx.com/",
+    image: "photos/maurice.jpg",
+    alt: "Måurice on Oak, its name on a curtain in the front window.",
     spots: [{ address: "921 SW Oak St", city: "Portland, OR 97205" }],
   },
   {
@@ -1030,6 +1078,8 @@ const restaurants = [
     meals: ["brunch", "lunch", "drinks"],
     note: "Mexico-forward cooking, mole, and a mezcal bar. Thursday through Sunday, 10 to 3. Evenings are private events.",
     website: "https://www.mexico-forward.com/",
+    image: "photos/republica.jpg",
+    alt: "Dining room at República, plants hanging over prints on a white wall.",
     spots: [{ address: "100 NW 10th Ave", city: "Portland, OR 97209" }],
   },
   {
@@ -1039,6 +1089,8 @@ const restaurants = [
     meals: ["lunch"],
     note: "Fine foods at the Alberta Carts pod. Wednesday through Sunday, noon until sold out. Closed Monday and Tuesday.",
     website: "https://www.walterfrench.com/",
+    image: "photos/walter-french.jpg",
+    alt: "A sandwich from Walter French’s, cut in half and stacked with greens.",
     spots: [{ address: "1027 NE Alberta St", city: "Portland, OR 97211" }],
   },
   {
