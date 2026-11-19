@@ -1,5 +1,6 @@
 // Add a restaurant by copying an object.
 // cuisine values become food filters. meals use breakfast, brunch, lunch, dinner, drinks.
+// status is want, been, loved, or skip. Leave it out for a place you haven't been yet.
 // Within one row, any selected tag matches. Across the two rows, both have to match.
 
 const restaurants = [
@@ -593,6 +594,7 @@ const restaurants = [
     neighborhood: "Alberta",
     cuisine: ["Ethiopian"],
     meals: ["dinner"],
+    status: "been",
     note: "Ethiopian and Eritrean. Doro wat is the one to get. Wednesday through Saturday, 5 to 9.",
     website: "https://abyssiniankitchen.com/",
     images: [
@@ -620,6 +622,7 @@ const restaurants = [
     neighborhood: "Hosford-Abernethy",
     cuisine: ["West African"],
     meals: ["dinner"],
+    status: "loved",
     note: "Corn fritters were excellent with a crisp lager. Jollof with the chicken stew was delicious. The drinks were good and sweet.",
     website: "https://www.akadipdx.com/",
     image: "photos/akadi.jpg",
@@ -632,6 +635,7 @@ const restaurants = [
     city: "Hillsboro",
     cuisine: ["Mexican"],
     meals: ["lunch", "dinner"],
+    status: "been",
     note: "The saved note was the food cart: burrito is cheap and a normal size, taco plate is mid and a little greasy. These are the two Hillsboro rooms.",
     website: "https://ameliasmexicanfood.com/",
     image: "photos/amelias.jpg",
@@ -686,7 +690,7 @@ const restaurants = [
     neighborhood: "Richmond",
     cuisine: ["Thai"],
     meals: ["dinner"],
-    note: "Been.",
+    status: "been",
     website: "https://www.yelp.com/biz/farmhouse-kitchen-thai-cuisine-portland-2",
     image: "photos/farmhouse.jpg",
     alt: "The Farmhouse Kitchen house on Hawthorne, porch behind a purple fence.",
@@ -756,6 +760,7 @@ const restaurants = [
     neighborhood: "Three rooms",
     cuisine: ["Mexican"],
     meals: ["lunch", "dinner"],
+    status: "loved",
     note: "BOGO chicken burritos are big. Guac is great. Tacos and chips were enough, with a little burrito left over.",
     website: "https://www.labonitapdx.com/",
     images: [
@@ -796,6 +801,7 @@ const restaurants = [
     neighborhood: "",
     cuisine: ["Mexican", "Food Cart"],
     meals: [],
+    status: "skip",
     note: "Skip it. Beans aren’t great, the burrito is mid, and the meat is gristly.",
     image: "photos/mexico-linda.jpg",
     alt: "Birria tacos with a cup of consommé and rice.",
@@ -881,6 +887,7 @@ const restaurants = [
     neighborhood: "Pearl and Burnside",
     cuisine: ["Southern"],
     meals: ["breakfast", "brunch", "lunch", "dinner", "drinks"],
+    status: "been",
     note: "Southern comfort food. Brunch 8:30 to 2, dinner 4:30 to 9, both rooms every day. Happy hour is worth it.",
     website: "https://screendoorrestaurant.com/",
     images: [
@@ -897,6 +904,7 @@ const restaurants = [
     neighborhood: "",
     cuisine: [],
     meals: [],
+    status: "been",
     note: "Decent burgers, regular size. Crinkle fries were okay, undercooked, and plain.",
     image: "photos/smak-dabs.jpg",
     alt: "The Smak Dabs cart, a small white trailer with a menu in the window.",
@@ -907,6 +915,7 @@ const restaurants = [
     neighborhood: "Central Eastside",
     cuisine: ["Barbecue"],
     meals: ["dinner"],
+    status: "skip",
     note: "Super mid.",
     image: "photos/southbound-smoke.jpg",
     alt: "Barbecue spread on butcher paper, with mac and cheese, greens, slaw, and cornbread.",
@@ -939,6 +948,7 @@ const restaurants = [
     neighborhood: "",
     cuisine: ["Mexican"],
     meals: [],
+    status: "skip",
     note: "Skip. Tacos are fine and nothing special. Enchiladas aren’t.",
     image: "photos/super-tacos-ocha.jpg",
     alt: "A red taco truck with photos of the menu on its side.",
@@ -949,6 +959,7 @@ const restaurants = [
     neighborhood: "Richmond",
     cuisine: ["Mexican"],
     meals: ["lunch", "dinner"],
+    status: "been",
     note: "Tacos, the burrito, and the churro bites were good.",
     website: "https://www.yelp.com/biz/tight-tacos-portland-3",
     image: "photos/tight.jpg",
@@ -1018,6 +1029,7 @@ const restaurants = [
     neighborhood: "Buckman",
     cuisine: ["Pizza", "Cider"],
     meals: ["lunch", "dinner", "drinks"],
+    status: "loved",
     note: "The margherita was great, and the side sauces were amazing. Caramelized onion dip was fire. The ciders are all delicious, and it's pretty cheap. Wednesday through Friday 4 to 9. Saturday noon to 9. Sunday noon to 7. Happy hour 4 to 5.",
     website: "https://www.baumanscider.com/baumansonoak",
     images: [
@@ -1443,6 +1455,22 @@ const mealFilters = [
   ["drinks", "Drinks"],
 ];
 
+const statusFilters = [
+  ["want", "Want to try"],
+  ["been", "Been"],
+  ["loved", "Loved"],
+  ["skip", "Skip"],
+];
+
+function statusOf(place) {
+  return place.status || "want";
+}
+
+function statusLabel(key) {
+  const found = statusFilters.find(([id]) => id === key);
+  return found ? found[1] : key;
+}
+
 function escapeText(value) {
   return value
     .replaceAll("&", "&amp;")
@@ -1476,6 +1504,7 @@ function placeHaystack(place) {
     place.city,
     place.note,
     place.closed,
+    place.status && statusLabel(place.status),
     ...(place.cuisine || []),
     ...(place.meals || []).map(mealLabel),
     ...(place.spots || []).flatMap((spot) => [spot.address, spot.label, spot.city]),
@@ -1599,6 +1628,7 @@ function placeCard(place) {
     ? `<a href="${escapeText(place.website)}" target="_blank" rel="noopener noreferrer">${escapeText(place.name)}</a>`
     : escapeText(place.name);
   const closed = place.closed ? `<p class="closed">${escapeText(place.closed)}</p>` : "";
+  const status = place.status ? `<p class="status status-${escapeText(place.status)}">${escapeText(statusLabel(place.status))}</p>` : "";
   const tagHtml = tags ? `<p class="tags">${tags}</p>` : "";
   const note = place.note ? `<p class="note">${escapeText(place.note)}</p>` : "";
   const hood = place.neighborhood ? `<p class="hood">${escapeText(place.neighborhood)}</p>` : "";
@@ -1608,6 +1638,7 @@ function placeCard(place) {
     <div class="place-body">
       ${hood}
       <h2>${title}</h2>
+      ${status}
       ${closed}
       ${tagHtml}
       ${note}
@@ -1718,15 +1749,17 @@ function renderRestaurantPage() {
   const foodBox = document.querySelector("[data-food-filters]");
   const mealBox = document.querySelector("[data-meal-filters]");
   const hoodBox = document.querySelector("[data-hood-filters]");
+  const statusBox = document.querySelector("[data-status-filters]");
   const list = document.querySelector("[data-restaurant-list]");
   const count = document.querySelector("[data-count]");
   const empty = document.querySelector("[data-empty]");
   const clearBtn = document.querySelector("[data-clear]");
-  if (!foodBox || !mealBox || !hoodBox || !list) return;
+  if (!foodBox || !mealBox || !hoodBox || !statusBox || !list) return;
 
   const selectedFood = new Set();
   const selectedMeals = new Set();
   const selectedHoods = new Set();
+  const selectedStatuses = new Set();
   const ordered = byName(restaurants);
 
   list.innerHTML = ordered.map((place) => placeCard(place)).join("");
@@ -1738,14 +1771,20 @@ function renderRestaurantPage() {
       const foodOk = selectedFood.size === 0 || place.cuisine.some((item) => selectedFood.has(item));
       const mealOk = selectedMeals.size === 0 || place.meals.some((item) => selectedMeals.has(item));
       const hoodOk = selectedHoods.size === 0 || placeHoods(place).some((item) => selectedHoods.has(item));
-      const visible = foodOk && mealOk && hoodOk && matchesQuery(place, search.query());
+      const statusOk = selectedStatuses.size === 0 || selectedStatuses.has(statusOf(place));
+      const visible = foodOk && mealOk && hoodOk && statusOk && matchesQuery(place, search.query());
       cards[index].hidden = !visible;
       if (visible) shown += 1;
     });
     const total = ordered.length;
     count.textContent = shown === total ? `${total} places` : `${shown} of ${total}`;
     empty.hidden = shown !== 0;
-    clearBtn.hidden = selectedFood.size === 0 && selectedMeals.size === 0 && selectedHoods.size === 0 && !search.query().trim();
+    clearBtn.hidden =
+      selectedFood.size === 0 &&
+      selectedMeals.size === 0 &&
+      selectedHoods.size === 0 &&
+      selectedStatuses.size === 0 &&
+      !search.query().trim();
   }
 
   const menus = [
@@ -1765,6 +1804,12 @@ function renderRestaurantPage() {
       name: "Neighborhood",
       options: hoodOptions(restaurants).map((name) => ({ value: name, label: name })),
       selected: selectedHoods,
+      onChange: apply,
+    }),
+    mountSelect(statusBox, {
+      name: "Status",
+      options: statusFilters.map(([value, label]) => ({ value, label })),
+      selected: selectedStatuses,
       onChange: apply,
     }),
   ];

@@ -674,6 +674,28 @@ code {
   text-transform: uppercase;
 }
 
+.status {
+  margin: 0.45rem 0 0;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.status-loved {
+  color: var(--stamp);
+  font-weight: 700;
+}
+
+.status-loved::before {
+  content: "♥ ";
+}
+
+.status-skip {
+  text-decoration: line-through;
+}
+
 main a.photo,
 main a.photo:hover,
 .place-card h2 a,
