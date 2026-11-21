@@ -1164,6 +1164,8 @@ const restaurants = [
     meals: ["lunch"],
     note: "Takeout musubi and onigiri, plus butter mochi, banana bread, and taiyaki, including a cheese-stuffed one. Closes at 4. Closed Sunday and Monday.",
     website: "https://www.yokaimusubi.com/",
+    image: "photos/yokai-musubi.svg",
+    alt: "An illustration of a Spam musubi with an onigiri and a little ghost.",
     spots: [{ address: "2190 W Burnside St, Suite A", city: "Portland, OR 97210" }],
   },
   {
@@ -1173,6 +1175,10 @@ const restaurants = [
     meals: ["breakfast", "lunch", "dinner", "drinks"],
     note: "Burger cart at the Cartopia pod. The fried chicken sandwich came recommended, and it’s a weekend thing. Breakfast sandwiches Saturday through Thursday 8 to noon, then 11 until late.",
     website: "https://burgerritual.com/",
+    image: "photos/burger-ritual.jpg",
+    alt: "The marquee-lit Cartopia sign above a painted mural at the cart pod.",
+    credit: "Another Believer, CC BY-SA 4.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Cartopia,_Portland,_Oregon_(2022)_-_2.jpg",
     spots: [{ address: "1207 SE Hawthorne Blvd", city: "Portland, OR 97214" }],
   },
   {
@@ -1182,6 +1188,8 @@ const restaurants = [
     meals: ["brunch"],
     note: "Mexican pop-up with a permanent home inside Commensal Fermentation, the brewery on Williams. Brunch Thursday through Sunday, 9 to 1. Dinner comes and goes, so check their Instagram.",
     website: "https://www.instagram.com/ancestro.pdx/",
+    image: "photos/ancestro.svg",
+    alt: "An illustration of a taco topped with greens, tomato, and onion.",
     spots: [{ address: "3901 N Williams Ave, Suite A", city: "Portland, OR 97227" }],
   },
   {
@@ -1202,6 +1210,10 @@ const restaurants = [
     cuisine: ["Italian", "Bakery"],
     meals: ["lunch", "dinner"],
     note: "Family-run Italian, made from scratch, with big portions. A stop on the drive to Yakima or Spokane. Not a Portland room.",
+    image: "photos/davanzos.jpg",
+    alt: "Main Street in Goldendale, with people crossing between the shops.",
+    credit: "bmaryman, CC BY 2.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Main_Street_in_Goldendale,_WA_(3481041248).jpg",
     spots: [{ address: "119 E Main St", city: "Goldendale, WA 98620" }],
   },
   {
@@ -1210,6 +1222,8 @@ const restaurants = [
     cuisine: ["Burgers"],
     meals: ["lunch", "dinner"],
     note: "Burger cart in the lot at Oakshire Beer Hall. They're planning a restaurant nearby.",
+    image: "photos/sure-shot.svg",
+    alt: "An illustration of a cheeseburger with lettuce and tomato.",
     spots: [{ address: "5013 NE 42nd Ave", city: "Portland, OR 97218" }],
   },
   {
@@ -1218,6 +1232,9 @@ const restaurants = [
     cuisine: ["Cocktails"],
     meals: ["brunch", "dinner", "drinks"],
     note: "Vegas-cowboy cocktail bar with food, in the old Houston Blacklight space. Weekdays from 3, Sunday brunch 10 to 3.",
+    website: "https://www.rhinestonepdx.com/",
+    image: "photos/rhinestone.jpg",
+    alt: "Three croquettes topped with fried shoestrings on a white plate.",
     spots: [{ address: "2100 SE Clinton St", city: "Portland, OR 97202" }],
   },
   {
@@ -1227,6 +1244,8 @@ const restaurants = [
     meals: ["dinner", "drinks"],
     note: "Gnome and fairy taproom and cafe in a Victorian house. House beer made with local fruit, and kombucha, served in goblets. Friday through Sunday, 4 to 9.",
     website: "https://gnomeandfaerie.com/",
+    image: "photos/gnome-faerie.svg",
+    alt: "An illustration of a red toadstool and a golden goblet under a starry sky.",
     spots: [{ address: "3257 SE Hawthorne Blvd", city: "Portland, OR 97214" }],
   },
   {
@@ -1235,6 +1254,8 @@ const restaurants = [
     cuisine: ["Chinese"],
     meals: ["lunch", "dinner"],
     note: "Noodles and stir-fry, from the owner of Rolls & Rice. It was opening soon when last checked, so confirm it's open.",
+    image: "photos/ding-spice.svg",
+    alt: "An illustration of a steaming bowl of noodles with chopsticks.",
     spots: [{ address: "3500 SE Hawthorne Blvd", city: "Portland, OR 97214" }],
   },
 ];
