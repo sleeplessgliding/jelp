@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <radialGradient id="heat" cx="0.5" cy="0.35" r="0.8"><stop offset="0" stop-color="#ff8a3d"/><stop offset="0.55" stop-color="#c2412d"/><stop offset="1" stop-color="#5a1c1c"/></radialGradient>
+  </defs>
+  <rect width="300" height="200" fill="url(#heat)"/>
+  <g fill="#d9a066">
+    <rect x="30" y="118" width="240" height="10" rx="2"/><rect x="30" y="131" width="240" height="10" rx="2"/>
+    <rect x="50" y="160" width="200" height="10" rx="2"/><rect x="50" y="173" width="200" height="10" rx="2"/>
+  </g>
+  <g fill="#a8723f"><rect x="40" y="141" width="8" height="20"/><rect x="252" y="141" width="8" height="20"/><rect x="60" y="183" width="8" height="17"/><rect x="232" y="183" width="8" height="17"/></g>
+  <g fill="none" stroke="#ffd9a8" stroke-width="3" stroke-linecap="round" opacity="0.85">
+    <path d="M100 100 c-10 -10 10 -18 0 -28 c-10 -10 10 -18 0 -28"/>
+    <path d="M150 100 c-10 -10 10 -18 0 -28 c-10 -10 10 -18 0 -28 c-10 -10 10 -18 0 -28"/>
+    <path d="M200 100 c-10 -10 10 -18 0 -28 c-10 -10 10 -18 0 -28"/>
+  </g>
+</svg>

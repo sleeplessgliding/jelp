@@ -1286,6 +1286,10 @@ const outings = [
     hoods: ["Pearl District"],
     cuisine: ["Art"],
     note: "Four galleries in the Pearl, a few blocks apart.",
+    image: "photos/art-galleries.jpg",
+    alt: "The Pearl District street sign at NW Glisan.",
+    credit: "AtlasPDX82, CC BY-SA 3.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Pearl_District_NW_Glisan_St.JPG",
     spots: [
       { label: "Laura Vincent", address: "824 NW Davis St", city: "Portland, OR 97209" },
       { label: "Waterstone", address: "124 NW 9th Ave", city: "Portland, OR 97209" },
@@ -1299,6 +1303,8 @@ const outings = [
     cuisine: ["Art"],
     note: "Immersive art.",
     website: "https://letshopscotch.com/locations/portland/",
+    image: "photos/hopscotch.svg",
+    alt: "An illustration of glowing neon frames and hopscotch squares.",
     spots: [{ address: "1020 SE 10th Ave", city: "Portland, OR 97214" }],
   },
   {
@@ -1307,6 +1313,8 @@ const outings = [
     cuisine: ["Make & Play"],
     note: "Moved out of Lloyd Center. Drop-in hours are Thursday, 4 to 8:30.",
     website: "https://www.synthlibraryportland.org/",
+    image: "photos/synth-library.jpg",
+    alt: "Hands patching cables on a glowing modular synth.",
     spots: [{ address: "123 NE 3rd Ave, Suite 012", city: "Portland, OR 97232" }],
   },
   {
@@ -1349,6 +1357,8 @@ const outings = [
     cuisine: ["Wellness"],
     note: "Underground thermal springs under a hotel: pools, sauna, steam, and cold plunge, in two- or three-hour sessions. 21 and over. Book ahead and bring a swimsuit.",
     website: "https://cascada.me/pages/visit-the-springs",
+    image: "photos/cascada.jpg",
+    alt: "A cedar sauna bench open to a sunny deck and garden.",
     spots: [{ address: "1150 NE Alberta St", city: "Portland, OR 97211" }],
   },
   {
@@ -1356,6 +1366,8 @@ const outings = [
     neighborhood: "Kerns",
     cuisine: ["Wellness"],
     website: "https://www.everetthousecommunityhealingcenter.com/",
+    image: "photos/everett-house.svg",
+    alt: "An illustration of a house with steam rising from the chimney.",
     spots: [{ address: "2927 NE Everett St", city: "Portland, OR 97232" }],
   },
   {
@@ -1364,6 +1376,8 @@ const outings = [
     city: "Lake Oswego",
     cuisine: ["Wellness"],
     note: "Private infrared sauna and cold plunge rooms you book by the session.",
+    image: "photos/sweathouz.svg",
+    alt: "An illustration of sauna benches in a warm red glow, with rising heat.",
     spots: [{ address: "4035 Mercantile Dr, Suite 170", city: "Lake Oswego, OR 97035" }],
   },
   {
@@ -1443,6 +1457,8 @@ const trips = [
     city: "California",
     cuisine: ["Stay"],
     note: "A ranch resort up Latigo Canyon, with a beach club down on the coast. Pools, a spa, and bungalows.",
+    image: "PDX/photos/calamigos.jpg",
+    alt: "An aerial view of the ranch: vineyards, trails, and white tents on a lawn.",
     spots: [{ address: "327 Latigo Canyon Rd", city: "Malibu, CA 90265" }],
   },
   {
@@ -1464,6 +1480,10 @@ const trips = [
     cuisine: ["Trip"],
     note: "Black Tomato’s Iconic Canadian Adventure.",
     website: "https://www.blacktomato.com/us/destinations/canada/iconic-canadian-adventure/",
+    image: "PDX/photos/moraine-lake.jpg",
+    alt: "Moraine Lake in Banff National Park, with peaks reflected in still water.",
+    credit: "Gorgo, public domain",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Moraine_Lake_17092005.jpg",
     spots: [],
   },
 ];
