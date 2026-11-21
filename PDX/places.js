@@ -2002,6 +2002,58 @@ function renderMiscPage() {
   apply();
 }
 
+function albumRow(album, index) {
+  const link = (inner) =>
+    album.website ? `<a href="${escapeText(album.website)}" target="_blank" rel="noopener noreferrer">${inner}</a>` : inner;
+  const cover = album.image
+    ? `<span class="album-cover">${link(`<img src="${escapeText(album.image)}" alt="${escapeText(album.alt || "")}" loading="lazy">`)}</span>`
+    : '<span class="album-cover"></span>';
+  const genres = (album.cuisine || []).length
+    ? `<span class="album-genres">${escapeText(album.cuisine.join(", "))}</span>`
+    : "";
+  return `<li class="album-row">
+    ${cover}
+    <div class="album-text">
+      <h2>${link(escapeText(album.name))}</h2>
+      <p class="album-meta"><span class="album-artist">${escapeText(album.neighborhood)}</span>${genres}</p>
+    </div>
+    <div class="album-copy">
+      <button type="button" data-copy="name" data-index="${index}" aria-label="Copy title: ${escapeText(album.name)}">Copy title</button>
+      <button type="button" data-copy="neighborhood" data-index="${index}" aria-label="Copy artist: ${escapeText(album.neighborhood)}">Copy artist</button>
+    </div>
+  </li>`;
+}
+
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const area = document.createElement("textarea");
+    area.value = text;
+    area.setAttribute("readonly", "");
+    area.style.position = "fixed";
+    area.style.opacity = "0";
+    document.body.append(area);
+    area.select();
+    const ok = document.execCommand("copy");
+    area.remove();
+    return ok;
+  }
+}
+
+function flashCopied(button, ok) {
+  const label = button.dataset.label || button.textContent;
+  button.dataset.label = label;
+  button.textContent = ok ? "Copied" : "Copy failed";
+  button.classList.add("is-copied");
+  clearTimeout(button.copyTimer);
+  button.copyTimer = setTimeout(() => {
+    button.textContent = label;
+    button.classList.remove("is-copied");
+  }, 1400);
+}
+
 function renderMusicPage() {
   const genreBox = document.querySelector("[data-genre-filters]");
   const artistBox = document.querySelector("[data-artist-filters]");
@@ -2009,12 +2061,27 @@ function renderMusicPage() {
   const count = document.querySelector("[data-count]");
   const empty = document.querySelector("[data-empty]");
   const clearBtn = document.querySelector("[data-clear]");
+  const copyListBtn = document.querySelector("[data-copy-list]");
   if (!genreBox || !artistBox || !list) return;
 
   const selectedGenres = new Set();
   const selectedArtists = new Set();
-  list.innerHTML = albums.map((album) => placeCard(album)).join("");
-  const cards = [...list.querySelectorAll(".place-card")];
+  list.innerHTML = albums.map((album, index) => albumRow(album, index)).join("");
+  const cards = [...list.querySelectorAll(".album-row")];
+
+  list.addEventListener("click", async (event) => {
+    const button = event.target.closest("[data-copy]");
+    if (!button) return;
+    const album = albums[Number(button.dataset.index)];
+    flashCopied(button, await copyText(album[button.dataset.copy]));
+  });
+
+  if (copyListBtn) {
+    copyListBtn.addEventListener("click", async () => {
+      const lines = albums.filter((album, index) => !cards[index].hidden).map((album) => `${album.neighborhood} – ${album.name}`);
+      flashCopied(copyListBtn, await copyText(lines.join("\n")));
+    });
+  }
   const genreNames = [...new Set(albums.flatMap((album) => album.cuisine || []))].sort((a, b) =>
     a.localeCompare(b, "en", { sensitivity: "base" })
   );
