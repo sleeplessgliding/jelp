@@ -17,14 +17,14 @@ const pages = [
     blurb: "Places to eat, filtered by food, meal, and neighborhood or city.",
   },
   {
-    href: "PDX/nurseries.html",
-    title: "Nurseries",
-    blurb: "Plant shops, with the neighborhood and the address.",
+    href: "PDX/out-and-about.html",
+    title: "Out & About",
+    blurb: "Places to go that aren’t restaurants: plant shops, art, saunas, parks, and more.",
   },
   {
-    href: "misc.html",
-    title: "Misc",
-    blurb: "Everything that isn’t a restaurant or a nursery.",
+    href: "travel.html",
+    title: "Travel",
+    blurb: "Trips, places to stay, and places to go someday.",
   },
   {
     href: "music.html",

@@ -1203,12 +1203,49 @@ const restaurants = [
     note: "Family-run Italian, made from scratch, with big portions. A stop on the drive to Yakima or Spokane. Not a Portland room.",
     spots: [{ address: "119 E Main St", city: "Goldendale, WA 98620" }],
   },
+  {
+    name: "Sure Shot Burger",
+    neighborhood: "Concordia",
+    cuisine: ["Burgers"],
+    meals: ["lunch", "dinner"],
+    note: "Burger cart in the lot at Oakshire Beer Hall. They're planning a restaurant nearby.",
+    spots: [{ address: "5013 NE 42nd Ave", city: "Portland, OR 97218" }],
+  },
+  {
+    name: "Rhinestone",
+    neighborhood: "Hosford-Abernethy",
+    cuisine: ["Cocktails"],
+    meals: ["brunch", "dinner", "drinks"],
+    note: "Vegas-cowboy cocktail bar with food, in the old Houston Blacklight space. Weekdays from 3, Sunday brunch 10 to 3.",
+    spots: [{ address: "2100 SE Clinton St", city: "Portland, OR 97202" }],
+  },
+  {
+    name: "Gnome & Faerie",
+    neighborhood: "Sunnyside",
+    cuisine: ["Brewery"],
+    meals: ["dinner", "drinks"],
+    note: "Gnome and fairy taproom and cafe in a Victorian house. House beer made with local fruit, and kombucha, served in goblets. Friday through Sunday, 4 to 9.",
+    website: "https://gnomeandfaerie.com/",
+    spots: [{ address: "3257 SE Hawthorne Blvd", city: "Portland, OR 97214" }],
+  },
+  {
+    name: "Ding & Spice",
+    neighborhood: "Richmond",
+    cuisine: ["Chinese"],
+    meals: ["lunch", "dinner"],
+    note: "Noodles and stir-fry, from the owner of Rolls & Rice. It was opening soon when last checked, so confirm it's open.",
+    spots: [{ address: "3500 SE Hawthorne Blvd", city: "Portland, OR 97214" }],
+  },
 ];
 
-const nurseries = [
+// Out & About: places to go in and around Portland that aren't restaurants.
+// cuisine holds the type: Plants, Art, Make & Play, Shops, Wellness, Outdoors, Events, Dates.
+// status works the same as on restaurants.
+const outings = [
   {
     name: "Hammer + Vine",
     neighborhood: "Nob Hill",
+    cuisine: ["Plants"],
     note: "A plant shop on West Burnside.",
     website: "https://hammerandvine.com/",
     image: "photos/hammer.jpg",
@@ -1220,6 +1257,7 @@ const nurseries = [
   {
     name: "Pistils",
     neighborhood: "Mississippi and Slabtown",
+    cuisine: ["Plants"],
     note: "Two plant shops.",
     website: "https://pistilsnursery.com/",
     image: "photos/pistils.jpg",
@@ -1232,6 +1270,7 @@ const nurseries = [
   {
     name: "Arium Botanicals",
     neighborhood: "Eliot",
+    cuisine: ["Plants"],
     note: "A greenhouse of houseplants on MLK.",
     website: "https://ariumbotanicals.com/",
     image: "photos/arium.jpg",
@@ -1240,16 +1279,12 @@ const nurseries = [
       { address: "2046 NE Martin Luther King Jr Blvd", city: "Portland, OR 97212" },
     ],
   },
-];
-
-const misc = [
   {
     name: "Art Galleries",
     neighborhood: "Pearl District",
     hoods: ["Pearl District"],
     cuisine: ["Art"],
-    meals: [],
-    note: "Four rooms in the Pearl.",
+    note: "Four galleries in the Pearl, a few blocks apart.",
     spots: [
       { label: "Laura Vincent", address: "824 NW Davis St", city: "Portland, OR 97209" },
       { label: "Waterstone", address: "124 NW 9th Ave", city: "Portland, OR 97209" },
@@ -1258,190 +1293,153 @@ const misc = [
     ],
   },
   {
-    name: "Black Tomato",
-    neighborhood: "Canada",
-    city: "Canada",
-    cuisine: ["Vacation"],
-    meals: [],
-    note: "Vancouver, Banff, and Calgary. An iconic Canadian adventure.",
-    website: "https://www.blacktomato.com/us/destinations/canada/iconic-canadian-adventure/",
-    spots: [],
-  },
-  {
-    name: "Cascada Thermal Springs",
-    neighborhood: "",
-    cuisine: [],
-    meals: [],
-    note: "Saved with no city.",
-    spots: [],
-  },
-  {
-    name: "Central Eastside",
-    neighborhood: "Central Eastside",
-    cuisine: ["Date"],
-    meals: [],
-    note: "A date: Postcard Bookshop, Sunflower Sake, and Toya Ramen.",
-    spots: [],
-  },
-  {
-    name: "Comic Con",
-    neighborhood: "",
-    cuisine: ["Event"],
-    meals: [],
-    spots: [],
-  },
-  {
-    name: "Everyday Music",
-    neighborhood: "",
-    cuisine: ["Fun"],
-    meals: [],
-    note: "Saved with no address.",
-    spots: [],
-  },
-  {
-    name: "Fairmont Banff Springs",
-    neighborhood: "Banff",
-    city: "Banff",
-    cuisine: ["Vacation"],
-    meals: [],
-    website: "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html",
-    spots: [],
-  },
-  {
-    name: "Fuzzy Space",
-    neighborhood: "",
-    cuisine: [],
-    meals: [],
-    spots: [],
-  },
-  {
-    name: "Gnome and Faire",
-    neighborhood: "",
-    cuisine: [],
-    meals: [],
-    spots: [],
-  },
-  {
     name: "Hopscotch",
     neighborhood: "Central Eastside",
-    cuisine: ["Fun"],
-    meals: [],
+    cuisine: ["Art"],
     note: "Immersive art.",
     website: "https://letshopscotch.com/locations/portland/",
     spots: [{ address: "1020 SE 10th Ave", city: "Portland, OR 97214" }],
   },
   {
-    name: "Marshall Park",
-    neighborhood: "",
-    cuisine: [],
-    meals: [],
+    name: "Fuzzy Space",
+    neighborhood: "Northeast",
+    cuisine: ["Make & Play"],
+    note: "Rug-tufting studio. Beginner workshops run about four hours, and you leave with a rug you designed. Listings disagree on the address, so check when you book.",
     spots: [],
-  },
-  {
-    name: "Next Level Pinball Museum",
-    neighborhood: "Hillsboro",
-    city: "Hillsboro",
-    cuisine: ["Fun"],
-    meals: [],
-    note: "Pinball and arcade games on free play. Closed Tuesday and Wednesday.",
-    website: "https://www.nextlevelpinballmuseum.com/",
-    spots: [{ address: "1458 NE 25th Ave", city: "Hillsboro, OR 97124" }],
   },
   {
     name: "Portland Synth Library",
     neighborhood: "Kerns",
-    cuisine: ["Fun"],
-    meals: [],
+    cuisine: ["Make & Play"],
     note: "Moved out of Lloyd Center. Drop-in hours are Thursday, 4 to 8:30.",
     website: "https://www.synthlibraryportland.org/",
     spots: [{ address: "123 NE 3rd Ave, Suite 012", city: "Portland, OR 97232" }],
   },
   {
-    name: "Rhinestone",
+    name: "Next Level Pinball Museum",
+    neighborhood: "Hillsboro",
+    city: "Hillsboro",
+    cuisine: ["Make & Play"],
+    note: "Pinball and arcade games on free play. Closed Tuesday and Wednesday.",
+    website: "https://www.nextlevelpinballmuseum.com/",
+    spots: [{ address: "1458 NE 25th Ave", city: "Hillsboro, OR 97124" }],
+  },
+  {
+    name: "Everyday Music",
     neighborhood: "",
-    cuisine: [],
-    meals: ["drinks"],
-    note: "Saved as drinks, with no address.",
+    cuisine: ["Shops"],
+    note: "Used records and CDs. The Sandy Boulevard store looks closed, so check where the Portland store is now.",
     spots: [],
   },
   {
     name: "Stumptown Otaku",
-    neighborhood: "",
-    cuisine: [],
-    meals: [],
-    spots: [],
+    neighborhood: "Old Town",
+    cuisine: ["Shops"],
+    note: "Anime and gift shop in the Haseltine Building, with trading-card games, claw machines, and pachinko.",
+    spots: [{ address: "133 SW 2nd Ave", city: "Portland, OR 97204" }],
   },
   {
-    name: "Stumptowntaku",
-    neighborhood: "",
-    cuisine: [],
-    meals: [],
-    spots: [],
-  },
-  {
-    name: "Sure Shot Burger",
-    neighborhood: "",
-    cuisine: [],
-    meals: [],
-    note: "Saved with no address.",
-    spots: [],
-  },
-  {
-    name: "Sweathouz",
-    neighborhood: "",
-    cuisine: ["Spa"],
-    meals: [],
-    note: "Saved with no city.",
-    spots: [],
+    name: "Cascada",
+    neighborhood: "Alberta",
+    cuisine: ["Wellness"],
+    note: "Underground thermal springs under a hotel: pools, sauna, steam, and cold plunge, in two- or three-hour sessions. 21 and over. Book ahead and bring a swimsuit.",
+    website: "https://cascada.me/pages/visit-the-springs",
+    spots: [{ address: "1150 NE Alberta St", city: "Portland, OR 97211" }],
   },
   {
     name: "The Everett House",
     neighborhood: "Kerns",
-    cuisine: ["Spa"],
-    meals: [],
+    cuisine: ["Wellness"],
     website: "https://www.everetthousecommunityhealingcenter.com/",
     spots: [{ address: "2927 NE Everett St", city: "Portland, OR 97232" }],
   },
   {
-    name: "Calmigos Guest Ranch",
-    neighborhood: "",
-    cuisine: ["Vacation"],
-    meals: [],
-    note: "Saved with no city.",
-    spots: [],
+    name: "Sweathouz",
+    neighborhood: "Lake Oswego",
+    city: "Lake Oswego",
+    cuisine: ["Wellness"],
+    note: "Private infrared sauna and cold plunge rooms you book by the session.",
+    spots: [{ address: "4035 Mercantile Dr, Suite 170", city: "Lake Oswego, OR 97035" }],
   },
   {
-    name: "Florence",
-    neighborhood: "Florence",
-    city: "Florence",
-    cuisine: ["Vacation"],
-    meals: [],
-    spots: [],
-  },
-  {
-    name: "Montecito",
-    neighborhood: "Montecito",
-    city: "Montecito",
-    cuisine: ["Vacation"],
-    meals: [],
-    spots: [],
-  },
-  {
-    name: "Yucatán",
-    neighborhood: "Yucatán",
-    city: "Yucatán",
-    cuisine: ["Vacation"],
-    meals: [],
+    name: "Marshall Park",
+    neighborhood: "Southwest",
+    cuisine: ["Outdoors"],
+    note: "A wooded canyon with trails down to Tryon Creek.",
+    website: "https://www.portland.gov/parks/marshall-park",
     spots: [],
   },
   {
     name: "Witch's Castle",
     neighborhood: "Forest Park",
-    cuisine: ["Landmark"],
-    meals: [],
+    cuisine: ["Outdoors"],
     note: "Also called Witches Castle and the Stone House. A 1930s stone ruin on the Lower Macleay Trail, about 0.8 miles from the trailhead.",
     website: "https://forestparkconservancy.org/lower-macleay-trail-page/",
     spots: [{ address: "2960 NW Upshur St", city: "Portland, OR 97210" }],
+  },
+  {
+    name: "Comic Con",
+    neighborhood: "",
+    cuisine: ["Events"],
+    spots: [],
+  },
+  {
+    name: "Central Eastside",
+    neighborhood: "Central Eastside",
+    cuisine: ["Dates"],
+    note: "Books, sake, and ramen: Postcard Bookshop, Sunflower Sake, and Toya Ramen.",
+    spots: [],
+  },
+];
+
+// Travel: trips, places to stay, and places to go someday.
+// cuisine holds the type: Destination, Stay, or Trip. city is the country or state, for the place filter.
+const trips = [
+  {
+    name: "Florence",
+    neighborhood: "Tuscany, Italy",
+    city: "Italy",
+    cuisine: ["Destination"],
+    spots: [],
+  },
+  {
+    name: "Montecito",
+    neighborhood: "Santa Barbara County",
+    city: "California",
+    cuisine: ["Destination"],
+    spots: [],
+  },
+  {
+    name: "Yucatán",
+    neighborhood: "Mexico",
+    city: "Mexico",
+    cuisine: ["Destination"],
+    spots: [],
+  },
+  {
+    name: "Calamigos Guest Ranch",
+    neighborhood: "Malibu",
+    city: "California",
+    cuisine: ["Stay"],
+    note: "A ranch resort up Latigo Canyon, with a beach club down on the coast. Pools, a spa, and bungalows.",
+    spots: [{ address: "327 Latigo Canyon Rd", city: "Malibu, CA 90265" }],
+  },
+  {
+    name: "Fairmont Banff Springs",
+    neighborhood: "Banff",
+    city: "Canada",
+    cuisine: ["Stay"],
+    website: "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html",
+    spots: [],
+  },
+  {
+    name: "Vancouver, Banff, and Calgary",
+    neighborhood: "Black Tomato",
+    city: "Canada",
+    cuisine: ["Trip"],
+    note: "Black Tomato’s Iconic Canadian Adventure.",
+    website: "https://www.blacktomato.com/us/destinations/canada/iconic-canadian-adventure/",
+    spots: [],
   },
 ];
 
@@ -1895,83 +1893,41 @@ function renderRestaurantPage() {
   apply();
 }
 
-function renderNurseryPage() {
-  const list = document.querySelector("[data-nursery-list]");
-  const hoodBox = document.querySelector("[data-hood-filters]");
-  const count = document.querySelector("[data-count]");
-  const empty = document.querySelector("[data-empty]");
-  const clearBtn = document.querySelector("[data-clear]");
-  if (!list || !hoodBox) return;
-
-  const selectedHoods = new Set();
-  const ordered = byName(nurseries);
-  list.innerHTML = ordered.map((place) => placeCard(place)).join("");
-  const cards = [...list.querySelectorAll(".place-card")];
-
-  function apply() {
-    let shown = 0;
-    ordered.forEach((place, index) => {
-      const visible = (selectedHoods.size === 0 || placeHoods(place).some((item) => selectedHoods.has(item))) && matchesQuery(place, search.query());
-      cards[index].hidden = !visible;
-      if (visible) shown += 1;
-    });
-    const total = ordered.length;
-    count.textContent = shown === total ? `${total} shops` : `${shown} of ${total}`;
-    empty.hidden = shown !== 0;
-    clearBtn.hidden = selectedHoods.size === 0 && !search.query().trim();
-  }
-
-  const menu = mountSelect(hoodBox, {
-    name: "Neighborhood",
-    options: hoodOptions(nurseries).map((name) => ({ value: name, label: name })),
-    selected: selectedHoods,
-    onChange: apply,
-  });
-
-  const search = mountSearch(apply);
-
-  clearBtn.addEventListener("click", () => {
-    menu.reset();
-    search.reset();
-    closeFilterMenus();
-    apply();
-  });
-
-  bindFilterDismiss();
-  apply();
-}
-
-function renderMiscPage() {
+// Out & About and Travel share one layout: a Type menu, a place menu, and, when the page
+// asks for it with [data-status-filters], a Status menu.
+function renderListPage({ listSelector, items, unit, placeName, typeOrder }) {
+  const list = document.querySelector(listSelector);
   const typeBox = document.querySelector("[data-type-filters]");
   const hoodBox = document.querySelector("[data-hood-filters]");
-  const list = document.querySelector("[data-misc-list]");
+  const statusBox = document.querySelector("[data-status-filters]");
   const count = document.querySelector("[data-count]");
   const empty = document.querySelector("[data-empty]");
   const clearBtn = document.querySelector("[data-clear]");
-  if (!typeBox || !hoodBox || !list) return;
+  if (!list || !typeBox || !hoodBox) return;
 
   const selectedTypes = new Set();
   const selectedHoods = new Set();
-  const ordered = byName(misc);
+  const selectedStatuses = new Set();
+  const ordered = byName(items);
   list.innerHTML = ordered.map((place) => placeCard(place)).join("");
   const cards = [...list.querySelectorAll(".place-card")];
-  const typeNames = [...new Set(misc.flatMap((place) => place.cuisine || []))].sort((a, b) =>
-    a.localeCompare(b, "en", { sensitivity: "base" })
-  );
+  const typeNames = typeOrder.filter((name) => items.some((place) => (place.cuisine || []).includes(name)));
 
   function apply() {
     let shown = 0;
     ordered.forEach((place, index) => {
       const typeOk = selectedTypes.size === 0 || (place.cuisine || []).some((item) => selectedTypes.has(item));
       const hoodOk = selectedHoods.size === 0 || placeHoods(place).some((item) => selectedHoods.has(item));
-      const visible = typeOk && hoodOk && matchesQuery(place, search.query());
+      const statusOk = selectedStatuses.size === 0 || selectedStatuses.has(statusOf(place));
+      const visible = typeOk && hoodOk && statusOk && matchesQuery(place, search.query());
       cards[index].hidden = !visible;
       if (visible) shown += 1;
     });
     const total = ordered.length;
-    count.textContent = shown === total ? `${total} places` : `${shown} of ${total}`;
+    count.textContent = shown === total ? `${total} ${unit}` : `${shown} of ${total}`;
     empty.hidden = shown !== 0;
-    clearBtn.hidden = selectedTypes.size === 0 && selectedHoods.size === 0 && !search.query().trim();
+    clearBtn.hidden =
+      selectedTypes.size === 0 && selectedHoods.size === 0 && selectedStatuses.size === 0 && !search.query().trim();
   }
 
   const menus = [
@@ -1982,12 +1938,22 @@ function renderMiscPage() {
       onChange: apply,
     }),
     mountSelect(hoodBox, {
-      name: "Place",
-      options: hoodOptions(misc).map((name) => ({ value: name, label: name })),
+      name: placeName,
+      options: hoodOptions(items).map((name) => ({ value: name, label: name })),
       selected: selectedHoods,
       onChange: apply,
     }),
   ];
+  if (statusBox) {
+    menus.push(
+      mountSelect(statusBox, {
+        name: "Status",
+        options: statusFilters.map(([value, label]) => ({ value, label })),
+        selected: selectedStatuses,
+        onChange: apply,
+      })
+    );
+  }
 
   const search = mountSearch(apply);
 
@@ -2158,6 +2124,18 @@ function bindSpotifyAppLinks(root) {
 
 bindCarousels();
 renderRestaurantPage();
-renderNurseryPage();
-renderMiscPage();
+renderListPage({
+  listSelector: "[data-outings-list]",
+  items: outings,
+  unit: "places",
+  placeName: "Neighborhood",
+  typeOrder: ["Plants", "Art", "Make & Play", "Shops", "Wellness", "Outdoors", "Events", "Dates"],
+});
+renderListPage({
+  listSelector: "[data-travel-list]",
+  items: trips,
+  unit: "places",
+  placeName: "Place",
+  typeOrder: ["Destination", "Stay", "Trip"],
+});
 renderMusicPage();
