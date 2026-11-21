@@ -1,6 +1,7 @@
 // Add a restaurant by copying an object.
 // cuisine values become food filters. meals use breakfast, brunch, lunch, dinner, drinks.
 // status is want, been, loved, or skip. Leave it out for a place you haven't been yet.
+// A photo from Wikimedia Commons needs credit ("Author, license") and creditUrl (the file page).
 // Within one row, any selected tag matches. Across the two rows, both have to match.
 
 const restaurants = [
@@ -1301,13 +1302,6 @@ const outings = [
     spots: [{ address: "1020 SE 10th Ave", city: "Portland, OR 97214" }],
   },
   {
-    name: "Fuzzy Space",
-    neighborhood: "Northeast",
-    cuisine: ["Make & Play"],
-    note: "Rug-tufting studio. Beginner workshops run about four hours, and you leave with a rug you designed. Listings disagree on the address, so check when you book.",
-    spots: [],
-  },
-  {
     name: "Portland Synth Library",
     neighborhood: "Kerns",
     cuisine: ["Make & Play"],
@@ -1322,20 +1316,31 @@ const outings = [
     cuisine: ["Make & Play"],
     note: "Pinball and arcade games on free play. Closed Tuesday and Wednesday.",
     website: "https://www.nextlevelpinballmuseum.com/",
+    image: "photos/next-level-pinball.jpg",
+    alt: "Rows of lit-up pinball machines and arcade cabinets.",
     spots: [{ address: "1458 NE 25th Ave", city: "Hillsboro, OR 97124" }],
   },
   {
-    name: "Everyday Music",
-    neighborhood: "",
+    name: "Music Millennium",
+    neighborhood: "Laurelhurst",
     cuisine: ["Shops"],
-    note: "Used records and CDs. The Sandy Boulevard store looks closed, so check where the Portland store is now.",
-    spots: [],
+    note: "Portland’s oldest record store, open since 1969. New and used vinyl and CDs, plus in-store shows.",
+    website: "https://www.musicmillennium.com/",
+    image: "photos/music-millennium.jpg",
+    alt: "Music Millennium’s brick storefront on East Burnside, with its marquee sign.",
+    credit: "Steve Morgan, CC BY-SA 3.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Music_Millennium_in_2015_-_Portland,_Oregon.jpg",
+    spots: [{ address: "3158 E Burnside St", city: "Portland, OR 97214" }],
   },
   {
     name: "Stumptown Otaku",
     neighborhood: "Old Town",
     cuisine: ["Shops"],
     note: "Anime and gift shop in the Haseltine Building, with trading-card games, claw machines, and pachinko.",
+    image: "photos/stumptown-otaku.jpg",
+    alt: "The brick and stone Haseltine Building on the corner of SW 2nd Avenue.",
+    credit: "Steve Morgan, CC BY-SA 4.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Haseltine_Building_-_Portland,_Oregon_(2025).jpg",
     spots: [{ address: "133 SW 2nd Ave", city: "Portland, OR 97204" }],
   },
   {
@@ -1367,6 +1372,10 @@ const outings = [
     cuisine: ["Outdoors"],
     note: "A wooded canyon with trails down to Tryon Creek.",
     website: "https://www.portland.gov/parks/marshall-park",
+    image: "photos/marshall-park.jpg",
+    alt: "Tryon Creek running over rocks through ferns and forest in Marshall Park.",
+    credit: "Finetooth, CC BY-SA 3.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Tryon_in_marshall_park.jpg",
     spots: [],
   },
   {
@@ -1375,19 +1384,19 @@ const outings = [
     cuisine: ["Outdoors"],
     note: "Also called Witches Castle and the Stone House. A 1930s stone ruin on the Lower Macleay Trail, about 0.8 miles from the trailhead.",
     website: "https://forestparkconservancy.org/lower-macleay-trail-page/",
+    image: "photos/witchs-castle.jpg",
+    alt: "The mossy stone ruin of Witch’s Castle in the woods of Forest Park.",
+    credit: "Slinkyo, CC0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Witch%27s_Castle_in_Forest_Park.jpg",
     spots: [{ address: "2960 NW Upshur St", city: "Portland, OR 97210" }],
-  },
-  {
-    name: "Comic Con",
-    neighborhood: "",
-    cuisine: ["Events"],
-    spots: [],
   },
   {
     name: "Central Eastside",
     neighborhood: "Central Eastside",
     cuisine: ["Dates"],
     note: "Books, sake, and ramen: Postcard Bookshop, Sunflower Sake, and Toya Ramen.",
+    image: "photos/central-eastside.jpg",
+    alt: "Inside Postcard Bookshop, shelves of books and racks of postcards.",
     spots: [],
   },
 ];
@@ -1400,6 +1409,10 @@ const trips = [
     neighborhood: "Tuscany, Italy",
     city: "Italy",
     cuisine: ["Destination"],
+    image: "PDX/photos/florence.jpg",
+    alt: "Florence rooftops at dusk, with the Duomo and the synagogue dome on the skyline.",
+    credit: "Olevy, CC BY-SA 4.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Quatre_monuments_de_Florence.jpg",
     spots: [],
   },
   {
@@ -1407,6 +1420,10 @@ const trips = [
     neighborhood: "Santa Barbara County",
     city: "California",
     cuisine: ["Destination"],
+    image: "PDX/photos/montecito.jpg",
+    alt: "Green hills above Montecito rolling down to the Pacific.",
+    credit: "Grandhiking, CC BY-SA 3.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:View_over_Montecito.JPG",
     spots: [],
   },
   {
@@ -1414,6 +1431,10 @@ const trips = [
     neighborhood: "Mexico",
     city: "Mexico",
     cuisine: ["Destination"],
+    image: "PDX/photos/yucatan.jpg",
+    alt: "The top of El Castillo, the stepped pyramid at Chichén Itzá.",
+    credit: "Diego Delso, CC BY-SA 4.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Templo_el_Castillo_-_Chichen_Itza-Yucatan-Mexico0222.jpg",
     spots: [],
   },
   {
@@ -1430,6 +1451,10 @@ const trips = [
     city: "Canada",
     cuisine: ["Stay"],
     website: "https://www.fairmont.com/en/hotels/banff/fairmont-banff-springs.html",
+    image: "PDX/photos/banff-springs.jpg",
+    alt: "The castle-like Fairmont Banff Springs among pines, with mountains behind.",
+    credit: "DXR, CC BY-SA 4.0",
+    creditUrl: "https://commons.wikimedia.org/wiki/File:Fairmont_Banff_Springs_Hotel,_west_view_20240820_1.jpg",
     spots: [],
   },
   {
@@ -1699,6 +1724,9 @@ function placeCard(place) {
   const note = place.note ? `<p class="note">${escapeText(place.note)}</p>` : "";
   const hood = place.neighborhood ? `<p class="hood">${escapeText(place.neighborhood)}</p>` : "";
   const addresses = place.spots && place.spots.length ? addressList(place.spots, place.spots.length > 1) : "";
+  const credit = place.credit
+    ? `<p class="credit">Photo: ${place.creditUrl ? `<a href="${escapeText(place.creditUrl)}" target="_blank" rel="noopener noreferrer">${escapeText(place.credit)}</a>` : escapeText(place.credit)}</p>`
+    : "";
   return `<article class="place-card">
     ${photo}
     <div class="place-body">
@@ -1709,6 +1737,7 @@ function placeCard(place) {
       ${tagHtml}
       ${note}
       ${addresses}
+      ${credit}
     </div>
   </article>`;
 }

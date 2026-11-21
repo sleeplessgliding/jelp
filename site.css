@@ -781,6 +781,18 @@ main a.photo:hover,
   margin: 0.15rem 0;
 }
 
+.place-card .credit {
+  margin: 0.7rem 0 0;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+}
+
+.place-card .credit a {
+  color: inherit;
+}
+
 .spot-label {
   color: var(--ink-soft);
   font-family: var(--mono);
